@@ -1,16 +1,16 @@
 package ar.edu.unq.po2.tp2;
 
-import java.util.Date;
-
 public class EmpleadoPlantaTemporal extends Empleado {
-	
-	public EmpleadoPlantaTemporal(String nombre, String direccion, String estadoCivil, Date fechaDeNacimiento2,
-			double sueldoBasico) {
-		super(nombre, direccion, estadoCivil, fechaDeNacimiento2, sueldoBasico);
-		
-	}
 	private float fechaFinDesignacion;
 	private int cantHorasExtras;
+	
+	public EmpleadoPlantaTemporal(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
+			double sueldoBasico, float fechaFinDesignacion, int cantHorasExtras) {
+		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
+		this.fechaFinDesignacion = fechaFinDesignacion;
+		this.cantHorasExtras = cantHorasExtras;
+	}
+	
 	
 	
 	public float getFechaFinDesignacion() {

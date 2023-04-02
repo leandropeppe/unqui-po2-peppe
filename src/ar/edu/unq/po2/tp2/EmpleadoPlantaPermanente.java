@@ -1,20 +1,19 @@
 package ar.edu.unq.po2.tp2;
 
-import java.util.Date;
-
 public class EmpleadoPlantaPermanente extends Empleado {
 	
 	private int cantHijos;
 	private int antiguedad;
 	
-	public EmpleadoPlantaPermanente(String nombre, String direccion, String estadoCivil, Date fechaDeNacimiento,
+	public EmpleadoPlantaPermanente(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
 			float sueldoBasico, int cantHijos, int antiguedad) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.cantHijos = cantHijos;
 		this.antiguedad = antiguedad;
 	}
 
-	
+
+
 	public int getCantHijos() {
 		return cantHijos;
 	}

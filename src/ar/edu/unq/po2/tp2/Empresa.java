@@ -8,7 +8,7 @@ public class Empresa {
 	
 	private String nombre;
 	private String cuit;
-	private List<Empleado> empleados = new ArrayList<Empleado>();
+	public List<Empleado> empleados = new ArrayList<Empleado>();
 
 	public Empresa(String nombre, String cuit, List<Empleado> empleados) {
 		super();
@@ -27,19 +27,25 @@ public class Empresa {
 	
 	public double calcularMontoTotalSueldoBruto() {
 		
-		List<Empleado> sueldosBrutos = new ArrayList<Empleado>();
-		Foreach(Empleado empleados: empleados){
-			empleado.calcularSueldoBruto().add(sueldosBrutos);
+		int acumulador = 0;
+		for(Empleado empleado: empleados) {
+			acumulador += empleado.calcularSueldoBruto();
 		}
-		return sueldosBrutos.sum();
+		return acumulador;
+		
 	}
 	
 	public double calcularMontoTotalRetenciones() {
-		return 0 ;
+		int acumulador = 0;
+		for(Empleado empleado: empleados) {
+			acumulador += empleado.calcularRetenciones();
+		}
+		return acumulador;
 	}
 	
 	public double calcularMontoTotalSueldoNeto() {
 		return this.calcularMontoTotalSueldoBruto() - this.calcularMontoTotalRetenciones() ;
 	}
+	
 	
 }

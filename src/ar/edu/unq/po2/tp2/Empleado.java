@@ -1,15 +1,12 @@
 package ar.edu.unq.po2.tp2;
 
-
-import java.util.Date;
-
 public abstract class Empleado {
 	// Attributes
 	
 	private String nombre;
 	private String direccion;
 	private String estadoCivil;
-	private Date fechaDeNacimiento;
+	private int fechaDeNacimiento;
 	private double sueldoBasico;
 	
 	// setter y getter attributes
@@ -32,7 +29,7 @@ public abstract class Empleado {
 		this.estadoCivil = estadoCivil;
 	}
 	
-	public Date getFechaDeNacimiento() {
+	public int getFechaDeNacimiento() {
 		return fechaDeNacimiento;
 	}
 	
@@ -45,11 +42,11 @@ public abstract class Empleado {
 	//////////////////////////////////////77
 	
 	// Constructor
-	public Empleado(String nombre, String direccion, String estadoCivil, Date fechaDeNacimiento2, double sueldoBasico) {
+	public Empleado(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento, double sueldoBasico) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.estadoCivil = estadoCivil;
-		this.fechaDeNacimiento = fechaDeNacimiento2;
+		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.sueldoBasico = sueldoBasico;
 	}
 	
