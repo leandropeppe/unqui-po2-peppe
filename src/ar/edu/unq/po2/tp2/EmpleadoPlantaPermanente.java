@@ -1,12 +1,14 @@
 package ar.edu.unq.po2.tp2;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class EmpleadoPlantaPermanente extends Empleado {
 	
 	private int cantHijos;
 	private int antiguedad;
 	
-	public EmpleadoPlantaPermanente(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
-			float sueldoBasico, int cantHijos, int antiguedad) {
+	public EmpleadoPlantaPermanente(String nombre, String direccion, String estadoCivil, LocalDate fechaDeNacimiento,
+			double sueldoBasico, int cantHijos, int antiguedad) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.cantHijos = cantHijos;
 		this.antiguedad = antiguedad;
@@ -69,7 +71,22 @@ public class EmpleadoPlantaPermanente extends Empleado {
 		return 0.15 * this.calcularSueldoBruto();
 	}
 	
+	@Override 
+	public ReciboDeHaberes generarRecibo() {
+		Date fechaActual = new Date();
+		ReciboDeHaberes reciboEmpleado = new ReciboDeHaberes(this.getNombre(), this.getDireccion(), fechaActual , this.calcularSueldoBruto(), this.calcularSueldoNeto() );
+		
+		return reciboEmpleado ;
+	}
+
+
+
 	
+
+
+
+	
+
 	
 	
 	

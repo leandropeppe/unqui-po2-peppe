@@ -1,8 +1,8 @@
 package ar.edu.unq.po2.tp2;
 
+import java.util.ListIterator;
 import java.util.*;
 import java.util.ArrayList;
-
 
 public class Empresa {
 	
@@ -47,5 +47,9 @@ public class Empresa {
 		return this.calcularMontoTotalSueldoBruto() - this.calcularMontoTotalRetenciones() ;
 	}
 	
-	
+	/*
+	public ReciboDeHaberes generarRecibos(List empleados) {
+		return empleado.generarRecibo();
+	}
+	*/
 }

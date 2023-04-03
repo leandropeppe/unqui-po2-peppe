@@ -1,12 +1,23 @@
 package ar.edu.unq.po2.tp2;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
+
+
 public abstract class Empleado {
 	// Attributes
+	
+	DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	LocalDate ahora = LocalDate.now();
+	
+	
 	
 	private String nombre;
 	private String direccion;
 	private String estadoCivil;
-	private int fechaDeNacimiento;
+	private LocalDate fechaDeNacimiento ;
 	private double sueldoBasico;
 	
 	// setter y getter attributes
@@ -29,20 +40,20 @@ public abstract class Empleado {
 		this.estadoCivil = estadoCivil;
 	}
 	
-	public int getFechaDeNacimiento() {
+	public LocalDate getFechaDeNacimiento() {
 		return fechaDeNacimiento;
 	}
 	
 	public double getSueldoBasico() {
 		return sueldoBasico;
 	}
-	public void setSueldoBasico(float sueldoBasico) {
+	public void setSueldoBasico(double sueldoBasico) {
 		this.sueldoBasico = sueldoBasico;
 	}
 	//////////////////////////////////////77
 	
 	// Constructor
-	public Empleado(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento, double sueldoBasico) {
+	public Empleado(String nombre, String direccion, String estadoCivil, LocalDate fechaDeNacimiento, double sueldoBasico) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.estadoCivil = estadoCivil;
@@ -67,8 +78,12 @@ public abstract class Empleado {
 	protected abstract double aportesJub() ;
 	
 	public int edad() {
-		return 0 ; //  LocalDate.now() - this.fechaDeNacimiento;
+		Period periodo = Period.between(fechaDeNacimiento,ahora) ; //  LocalDate.now() - this.fechaDeNacimiento;
+		return periodo.getYears();
+		
+		
 	}
 	
+	public abstract ReciboDeHaberes generarRecibo() ;
 	
 }

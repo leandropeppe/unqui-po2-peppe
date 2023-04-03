@@ -1,11 +1,14 @@
 package ar.edu.unq.po2.tp2;
+//import java.util.Date;
+
+import java.time.LocalDate;
 
 public class EmpleadoPlantaTemporal extends Empleado {
-	private float fechaFinDesignacion;
+	private LocalDate fechaFinDesignacion;
 	private int cantHorasExtras;
 	
-	public EmpleadoPlantaTemporal(String nombre, String direccion, String estadoCivil, int fechaDeNacimiento,
-			double sueldoBasico, float fechaFinDesignacion, int cantHorasExtras) {
+	public EmpleadoPlantaTemporal(String nombre, String direccion, String estadoCivil, LocalDate fechaDeNacimiento,
+			double sueldoBasico, LocalDate fechaFinDesignacion, int cantHorasExtras) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.fechaFinDesignacion = fechaFinDesignacion;
 		this.cantHorasExtras = cantHorasExtras;
@@ -13,10 +16,10 @@ public class EmpleadoPlantaTemporal extends Empleado {
 	
 	
 	
-	public float getFechaFinDesignacion() {
+	public LocalDate getFechaFinDesignacion() {
 		return fechaFinDesignacion;
 	}
-	public void setFechaFinDesignacion(float fechaFinDesignacion) {
+	public void setFechaFinDesignacion(LocalDate fechaFinDesignacion) {
 		this.fechaFinDesignacion = fechaFinDesignacion;
 	}
 	public int getCantHorasExtras() {
@@ -55,6 +58,14 @@ public class EmpleadoPlantaTemporal extends Empleado {
 	@Override
 	protected double aportesJub() {
 		return 0.1 * this.calcularSueldoBruto();
+	}
+
+
+
+	@Override
+	public ReciboDeHaberes generarRecibo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
