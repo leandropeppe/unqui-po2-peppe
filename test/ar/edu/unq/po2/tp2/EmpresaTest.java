@@ -26,7 +26,7 @@ public class EmpresaTest {
 	
 	EmpleadoPlantaPermanente empleadoP  = new EmpleadoPlantaPermanente("Leandro", "Bernal", "Soltero", fechaNacLeandro , 50000, 0, 10 );
 	EmpleadoPlantaTemporal   empleadoT  = new EmpleadoPlantaTemporal("Temporal", "Bernal", "Casado", fechaNacTemp , 50000, fechaExpTemp , 10 );
-	EmpleadoPlantaPermanente empleadoP2 = new EmpleadoPlantaPermanente("Ariel", "Bernal", "Casado", fechaNacAriel , 50000, 2, 30 );
+	EmpleadoContratado       empleadoC  = new EmpleadoContratado("Ariel", "Bernal", "Casado", fechaNacAriel , 50000, "54056", "cheque" );
 	
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -36,7 +36,7 @@ public class EmpresaTest {
 		// A la lista a los empleados
 		empleados.add(empleadoP);
 		empleados.add(empleadoT);
-		empleados.add(empleadoP2);
+		empleados.add(empleadoC);
 
 
 	}
@@ -51,7 +51,7 @@ public class EmpresaTest {
 		
 		double montoTotalBruto = exo.calcularMontoTotalSueldoBruto();
 		
-		assertEquals(montoTotalBruto,151000);
+		assertEquals(montoTotalBruto,150450);
 		
 	}
 	
@@ -60,7 +60,7 @@ public class EmpresaTest {
 		
 		double montoTotalRetenciones = exo.calcularMontoTotalRetenciones();
 		
-		assertEquals(montoTotalRetenciones,35320,1);
+		assertEquals(montoTotalRetenciones,22692.5,1);
 		
 	}
 	
@@ -69,7 +69,7 @@ public class EmpresaTest {
 		
 		double montoTotalNeto = exo.calcularMontoTotalSueldoNeto();
 		
-		assertEquals(montoTotalNeto,115681);
+		assertEquals(montoTotalNeto,127758,1);
 	
 	}
 	
@@ -79,7 +79,8 @@ public class EmpresaTest {
 		List<ReciboDeHaberes> reciboDeHaberes = exo.liquidarSueldos();
 		
 		assertEquals(empleadoP,empleados.get(0));
-		//assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));   Que pasa aca loco ??
+		
+		// assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));   Que pasa aca loco ??
 	
 		
 	}

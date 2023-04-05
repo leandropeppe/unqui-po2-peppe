@@ -21,7 +21,7 @@ public class EmpleadoTest {
 	
 	EmpleadoPlantaPermanente empleadoP  = new EmpleadoPlantaPermanente("Leandro", "Bernal", "Soltero", fechaNacLeandro , 50000, 0, 10 );
 	EmpleadoPlantaTemporal   empleadoT  = new EmpleadoPlantaTemporal("Temporal", "Bernal", "Casado", fechaNacTemp , 50000, fechaExpTemp , 10 );
-	EmpleadoPlantaPermanente empleadoP2 = new EmpleadoPlantaPermanente("Ariel", "Bernal", "Casado", fechaNacAriel , 50000, 2, 30 );
+	EmpleadoContratado       empleadoC  = new EmpleadoContratado("Ariel", "Bernal", "Casado", fechaNacAriel , 50000, "54056", "cheque" );
 	
 	
 	@Test
@@ -33,12 +33,12 @@ public class EmpleadoTest {
 		double sueldobrutoT = empleadoT.calcularSueldoBruto();
 		double sueldoEsperadoT = 50400;
 		
-		double sueldobrutoA = empleadoP2.calcularSueldoBruto();
-		double sueldoEsperadoA = 50550;
+		double sueldobrutoC = empleadoC.calcularSueldoBruto();
+		double sueldoEsperadoC = 50000;
 		
 		assertEquals(sueldobrutoP,sueldoEsperadoP);
 		assertEquals(sueldobrutoT,sueldoEsperadoT);
-		assertEquals(sueldobrutoA,sueldoEsperadoA);
+		assertEquals(sueldobrutoC,sueldoEsperadoC);
 	}
 	
 	
@@ -51,12 +51,12 @@ public class EmpleadoTest {
 		double retencionesT = empleadoT.calcularRetenciones();
 		double retencionesEsperadaT = 10130;
 		
-		double retencionesA = empleadoP2.calcularRetenciones();
-		double retencionesEsperadaA = 12677.5;
+		double retencionesC = empleadoC.calcularRetenciones();
+		double retencionesEsperadaC = 50;
 		
 		assertEquals(retencionesP,retencionesEsperadaP);
 		assertEquals(retencionesT,retencionesEsperadaT);
-		assertEquals(retencionesA,retencionesEsperadaA);
+		assertEquals(retencionesC,retencionesEsperadaC);
 		
 	}
 	
@@ -69,12 +69,12 @@ public class EmpleadoTest {
 		double netoT = empleadoT.calcularSueldoNeto();
 		double netoEsperadaT = 40270;
 		
-		double netoA = empleadoP2.calcularSueldoNeto();
-		double netoEsperadaA = 37872.5;
+		double netoC = empleadoC.calcularSueldoNeto();
+		double netoEsperadaC = 49950;
 		
 		assertEquals(netoP,netoEsperadaP);
 		assertEquals(netoT,netoEsperadaT);
-		assertEquals(netoA,netoEsperadaA);
+		assertEquals(netoC,netoEsperadaC);
 	}
 	
 	@Test
@@ -82,11 +82,11 @@ public class EmpleadoTest {
 		
 		int edadL = empleadoP.edad();
 		int edadT = empleadoT.edad();
-		int edadA = empleadoP2.edad();
+		int edadC = empleadoC.edad();
 		
 		assertEquals(edadL,28);
 		assertEquals(edadT,38);
-		assertEquals(edadA,59);
+		assertEquals(edadC,59);
 	}
 		
 }

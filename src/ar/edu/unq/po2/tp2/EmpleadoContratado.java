@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class EmpleadoContratado extends Empleado{
-	private int numContrat;
+	private String numContrat;
 	private String medioDePago;
 	
 	public EmpleadoContratado(String nombre, String direccion, String estadoCivil, LocalDate fechaDeNacimiento,
-			double sueldoBasico, int numContrat, String medioDePago) {
+			double sueldoBasico, String numContrat, String medioDePago) {
 		super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico);
 		this.numContrat = numContrat;
 		this.medioDePago = medioDePago;
@@ -16,7 +16,7 @@ public class EmpleadoContratado extends Empleado{
 
 	
 	
-	public int getNumContrat() {
+	public String getNumContrat() {
 		return numContrat;
 	}
 
