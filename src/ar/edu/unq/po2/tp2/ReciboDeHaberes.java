@@ -5,9 +5,10 @@ import java.util.Date;
 public class ReciboDeHaberes {
 	private String nombreDelEmpleado;
 	private String direccionDelEmpleado;
-	private Date fechaEmision = new Date();
+	private Date fechaEmision ; //= new Date();
 	private double sueldoBruto;
 	private double sueldoNeto;
+	//private String desgloce;
 	
 	
 	public ReciboDeHaberes(String nombreDelEmpleado, String direccionDelEmpleado, Date fechaEmision, double sueldoBruto,

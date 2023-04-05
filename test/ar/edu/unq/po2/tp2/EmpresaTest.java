@@ -1,7 +1,5 @@
 package ar.edu.unq.po2.tp2;
 
-import java.util.ListIterator;
-
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -73,6 +71,17 @@ public class EmpresaTest {
 		
 		assertEquals(montoTotalNeto,115681);
 	
+	}
+	
+	@Test
+	public void liquidarRecibosTest() {
+		
+		List<ReciboDeHaberes> reciboDeHaberes = exo.liquidarSueldos();
+		
+		assertEquals(empleadoP,empleados.get(0));
+		//assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));   Que pasa aca loco ??
+	
+		
 	}
 	
 }

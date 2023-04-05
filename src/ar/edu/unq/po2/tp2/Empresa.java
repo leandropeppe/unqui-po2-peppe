@@ -1,14 +1,13 @@
 package ar.edu.unq.po2.tp2;
 
-import java.util.ListIterator;
 import java.util.*;
-import java.util.ArrayList;
 
 public class Empresa {
 	
 	private String nombre;
 	private String cuit;
 	public List<Empleado> empleados = new ArrayList<Empleado>();
+	public List<ReciboDeHaberes> recibos = new ArrayList<ReciboDeHaberes>();
 
 	public Empresa(String nombre, String cuit, List<Empleado> empleados) {
 		super();
@@ -47,9 +46,13 @@ public class Empresa {
 		return this.calcularMontoTotalSueldoBruto() - this.calcularMontoTotalRetenciones() ;
 	}
 	
-	/*
-	public ReciboDeHaberes generarRecibos(List empleados) {
-		return empleado.generarRecibo();
+	
+	public List<ReciboDeHaberes> liquidarSueldos() {
+		
+		for(Empleado empleado: empleados) {
+			recibos.add(empleado.generarRecibo());
+		}
+		return recibos;
 	}
-	*/
+	
 }

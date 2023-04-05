@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tp2;
 //import java.util.Date;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class EmpleadoPlantaTemporal extends Empleado {
 	private LocalDate fechaFinDesignacion;
@@ -62,10 +63,12 @@ public class EmpleadoPlantaTemporal extends Empleado {
 
 
 
-	@Override
+	@Override 
 	public ReciboDeHaberes generarRecibo() {
-		// TODO Auto-generated method stub
-		return null;
+		Date fechaActual = new Date();
+		ReciboDeHaberes reciboEmpleado = new ReciboDeHaberes(this.getNombre(), this.getDireccion(), fechaActual , this.calcularSueldoBruto(), this.calcularSueldoNeto() );
+		
+		return reciboEmpleado ;
 	}
 	
 	
