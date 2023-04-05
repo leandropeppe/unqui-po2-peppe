@@ -80,7 +80,7 @@ public class EmpresaTest {
 		
 		assertEquals(empleadoP,empleados.get(0));
 		
-		// assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));   Que pasa aca loco ??
+		// assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));   Que pasa aca loco ?? asdasd
 	
 		
 	}
