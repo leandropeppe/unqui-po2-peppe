@@ -1,6 +1,5 @@
 package ar.edu.unq.po2.tp2;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -77,12 +76,27 @@ public class EmpresaTest {
 	public void liquidarRecibosTest() {
 		
 		List<ReciboDeHaberes> reciboDeHaberes = exo.liquidarSueldos();
+		Date fechaActual = new Date();
+		
 		
 		assertEquals(empleadoP,empleados.get(0));
 		
-		// assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));   Que pasa aca loco ?? 
-	
+		assertEquals(empleadoP.getNombre(),reciboDeHaberes.get(0).getNombreDelEmpleado()); //   Que pasa aca loco ?? asdasd
+		assertEquals(empleadoP.getDireccion(),reciboDeHaberes.get(0).getDireccionDelEmpleado());
+		assertEquals(fechaActual,reciboDeHaberes.get(0).getFechaEmision());
+		assertEquals(empleadoP.calcularSueldoBruto(),reciboDeHaberes.get(0).getSueldoBruto());
+		assertEquals(empleadoP.calcularSueldoNeto(),reciboDeHaberes.get(0).getSueldoNeto());
 		
+		
+		assertEquals("Temporal",reciboDeHaberes.get(1).getNombreDelEmpleado());
+		assertEquals(empleadoC.getNombre(),reciboDeHaberes.get(2).getNombreDelEmpleado());
+		
+		//assertEquals(empleadoP.generarRecibo(),reciboDeHaberes.get(0));
 	}
+	
+	
+	
+	
+	
 	
 }

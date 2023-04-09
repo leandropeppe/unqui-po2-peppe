@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tp2;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class ReciboDeHaberes {
 	private String nombreDelEmpleado;
@@ -19,7 +20,63 @@ public class ReciboDeHaberes {
 		this.fechaEmision = fechaEmision;
 		this.sueldoBruto = sueldoBruto;
 		this.sueldoNeto = sueldoNeto;
+	}
+
+	
+	@Override
+    public int hashCode() {
+        return Objects.hash(nombreDelEmpleado, direccionDelEmpleado , fechaEmision , sueldoBruto , sueldoNeto);
+    }
+	
+	public String getNombreDelEmpleado() {
+		return nombreDelEmpleado;
+	}
+
+
+	public void setNombreDelEmpleado(String nombreDelEmpleado) {
+		this.nombreDelEmpleado = nombreDelEmpleado;
+	}
+
+
+	public String getDireccionDelEmpleado() {
+		return direccionDelEmpleado;
+	}
+
+
+	public void setDireccionDelEmpleado(String direccionDelEmpleado) {
+		this.direccionDelEmpleado = direccionDelEmpleado;
+	}
+
+
+	public Date getFechaEmision() {
+		return fechaEmision;
+	}
+
+
+	public void setFechaEmision(Date fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
+
+
+	public double getSueldoBruto() {
+		return sueldoBruto;
+	}
+
+
+	public void setSueldoBruto(double sueldoBruto) {
+		this.sueldoBruto = sueldoBruto;
+	}
+
+
+	public double getSueldoNeto() {
+		return sueldoNeto;
+	}
+
+
+	public void setSueldoNeto(double sueldoNeto) {
+		this.sueldoNeto = sueldoNeto;
 	} 
+	
 	
 	
 }
