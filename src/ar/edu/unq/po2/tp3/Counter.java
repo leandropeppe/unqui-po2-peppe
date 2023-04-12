@@ -42,23 +42,9 @@ public class Counter {
 	}
 	
 	
+	/////////////////////////////////////////////////////
 	
 	
-	/*
-	public int desarmandoNumeros() {
-		
-		int masDigitosPares = (int) numeros.get(0);
-		
-		for(int i = (int) numeros.get(1); i <= numeros.size() - 1; i = i + 1){
-			if(this.cantidadPares(generarArreglo(numeros.get(i))) > this.cantidadPares(generarArreglo(masDigitosPares)) ) {
-				masDigitosPares = numeros.get(i) ;
-			}
-		}
-		return masDigitosPares ;
-		
-			
-	}
-	*/
 	public int desarmandoNumeros() {
 		
 		int masDigitosPares = numeros.get(0);
@@ -112,25 +98,25 @@ public class Counter {
 	
 	
 	
+	//////////////////////////////////////////////////////////
 	
-	
-	
-	
-	public int mayorMultiplosDe(int x , int y) {
-		if(this.multiploComun(x,y) > 1000)
-			return -1;
-		else {
-			int maxMultiplo = this.multiploComun(x,y);
-			while( maxMultiplo < 1000) {
-				maxMultiplo = maxMultiplo * this.multiploComun(x,y);
-			}
-			return maxMultiplo;
-		}	
+	// 3 9
+	public int multiplo(int x, int y) {
+	    for (int i = 1000; i > 0; i--) {
+	        if (i % x == 0 && i % y == 0) {
+	            return i;
+	        }
+	    }
+	    return -1;
 	}
 	
-	public int multiploComun(int x , int y) {
-		return x * y ;
-	}
+	
+	
+	//////////////////////////////////////////7
+	
+	
+	
+	
 	
 	
 }
