@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class CounterTestCase {
 	private Counter counter;
+	private Counter contador;
 	/**
 	 * Crea un escenario de test básico, que consiste en un contador
 	 * con 10 enteros
@@ -17,6 +18,7 @@ public class CounterTestCase {
 	public void setUp() throws Exception {
 	//Se crea el contador
 		counter = new Counter();
+		contador = new Counter();
 		//Se agregan los numeros. Un solo par y nueve impares
 		counter.addNumber(1);
 		counter.addNumber(3);
@@ -28,6 +30,11 @@ public class CounterTestCase {
 		counter.addNumber(1);
 		counter.addNumber(1);
 		counter.addNumber(4);
+		
+		contador.addNumber(0);
+		contador.addNumber(4444);
+		contador.addNumber(5525);
+		contador.addNumber(66666);
 	}
 	/**
 	 * Verifica la cantidad de pares
@@ -46,5 +53,13 @@ public class CounterTestCase {
 		assertEquals(counter.cantidadMultiplosDe(5), 1);
 		assertEquals(counter.cantidadMultiplosDe(4), 1);
 		assertEquals(counter.cantidadMultiplosDe(1), 10);
+		
 	}
+	
+	
+	@Test
+	public void desarmandoNumerosTest() {
+		assertEquals(contador.desarmandoNumeros(), 66666);
+	}
+	
 }
