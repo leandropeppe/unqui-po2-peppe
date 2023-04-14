@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp3;
 
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -38,6 +39,8 @@ public class CounterTestCase {
 		contador.addNumber(4444);
 		contador.addNumber(5525);
 		contador.addNumber(66666);
+		
+		
 	}
 	/**
 	 * Verifica la cantidad de pares
@@ -92,6 +95,12 @@ public class CounterTestCase {
 		System.out.println((a.length() + a).startsWith("a"));
 		assertTrue(s = a,true);
 		assertTrue(a.substring(1,3).equals("bc"));
+		
+		int[] arregloDeEnteros = new int[] {4,3,2,1};
+		
+		assertEquals(arregloDeEnteros.length, 4);
+		
+		
 	}
 	
 }
