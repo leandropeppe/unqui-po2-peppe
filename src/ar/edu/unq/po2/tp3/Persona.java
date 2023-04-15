@@ -8,7 +8,7 @@ public class Persona {
 	
 	private String nombre ; 
 	private LocalDate fechaNac ; 
-	private int edad; 
+	private String apellido;
 	
 	LocalDate ahora = LocalDate.now() ;
 	
@@ -34,7 +34,7 @@ public class Persona {
 		
 	
 	public Boolean menorQue(Persona persona) {
-		return this.getFechaNac().isBefore(persona.getFechaNac()) ;   
+		return this.getFechaNac().isAfter(persona.getFechaNac()) ;   
 	}
 	
 	
