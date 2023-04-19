@@ -9,12 +9,16 @@ public class ProductoCooperativa extends Producto {
 		super(nombre, precio);
 	}
 
+	
 	@Override
 	public boolean esCooperativa() {
 		return true;
 	}
 	
-	
+	@Override 
+	public double getPrecio() {
+		return precio * 0.9;
+	}
 	
 
 }

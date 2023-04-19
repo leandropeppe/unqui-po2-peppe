@@ -20,12 +20,7 @@ public class Caja {
 	public double calcularPrecioCompra(List<Producto> stockMercado,List<Producto> compra) {
 		double precioTotal = 0;
 		for(Producto producto:compra) {
-			if(producto.esCooperativa()) {
-				precioTotal += (producto.getPrecio() * 0.9 );
-			}
-			else {
-				precioTotal += producto.getPrecio();
-			}
+			precioTotal += producto.getPrecio();
 			this.sacarDelStock(producto);
 		}
 		System.out.println ("El precio de su compra es: $" + precioTotal);

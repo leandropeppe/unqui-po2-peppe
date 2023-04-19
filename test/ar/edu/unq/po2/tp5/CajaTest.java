@@ -60,6 +60,8 @@ class CajaTest {
 	@Test
 	void test() {
 		assertEquals(103.41,caja1.calcularPrecioCompra(stockMercado, cliente1.getCompra()));
+		assertSame(detergente, caja1.getStock().get(0));
+		assertEquals(1,caja1.getStock().size());
 		caja1.sacarDelStock(arroz);
 		assertFalse(caja1.getStock().contains(arroz));
 	}
