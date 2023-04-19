@@ -52,6 +52,12 @@ public class Producto {
 		return preciosCuidados;
 	}
 
+
+	public boolean esCooperativa() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 	
 
