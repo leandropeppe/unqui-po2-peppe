@@ -5,46 +5,47 @@ import java.util.List;
 
 import ar.edu.unq.po2.tp4.Producto;
 
-public class Caja {
+public class Caja implements Agencia{
 	
-	private Cliente cliente1;
 	private List<Producto> stockMercado ;
+	private List<Producto> compra ;
 	
 	
-	public Caja(Cliente cliente1, List<Producto> stockMercado) {
+	public Caja(List<Producto> compra , List<Producto> stockMercado) {
 		super();
-		this.stockMercado = stockMercado;
 	}
 	
 	
-	public double calcularPrecioCompra(List<Producto> stockMercado,List<Producto> compra) {
-		double precioTotal = 0;
-		for(Producto producto:compra) {
-			precioTotal += producto.getPrecio();
-			this.sacarDelStock(producto);
-		}
-		System.out.println ("El precio de su compra es: $" + precioTotal);
-		return precioTotal;
-	}
-
-
+	
 	public void sacarDelStock(Producto producto) {
 		stockMercado.remove(producto);
 	}
-
+	
 
 	public List<Producto> getStock() {
 		return stockMercado;
 	}
 
 
-	public Cliente getCliente1() {
-		return cliente1;
+
+	@Override
+	public void registrarPago(Factura factura) {
+		
 	}
 
 
-	public void setCliente1(Cliente cliente1) {
-		this.cliente1 = cliente1;
+	public List<Producto> getCompra() {
+		return compra;
+	}
+
+
+	public double cobrar(List<Cobrable> cobrables) {
+		double acumulador = 0;
+		for(Cobrable cobrable : cobrables) {
+			cobrable.informarPago(this);
+			acumulador += cobrable.getMontoAPagar();
+		}
+		return acumulador ;
 	}
 	
 	

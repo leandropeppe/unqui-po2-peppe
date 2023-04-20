@@ -29,7 +29,7 @@ public class Supermercado {
 	public double getPrecioTotal() {
 		double acumulador = 0 ;
 		for(Producto producto : productos) {
-			acumulador += producto.getPrecio();
+			acumulador += producto.getMontoAPagar();
 		}
 		return acumulador;
 	}

@@ -1,6 +1,9 @@
 package ar.edu.unq.po2.tp4;
 
-public class Producto {
+import ar.edu.unq.po2.tp5.Caja;
+import ar.edu.unq.po2.tp5.Cobrable;
+
+public class Producto implements Cobrable{
 	
 	private String nombre;
 	protected double precio;
@@ -27,7 +30,7 @@ public class Producto {
 		this.precio = precio;
 	}
 	
-	public double getPrecio() {
+	public double getMontoAPagar() {
 		return precio;
 	}
 
@@ -43,7 +46,7 @@ public class Producto {
 	
 	
 	public void aumentarPrecio(double valor) {
-		this.setPrecio(this.getPrecio() + valor);
+		this.setPrecio(this.getMontoAPagar() + valor);
 	}
 	
 	
@@ -56,6 +59,12 @@ public class Producto {
 	public boolean esCooperativa() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	@Override
+	public void informarPago(Caja caja) {
+		caja.sacarDelStock(this);
 	}
 
 	

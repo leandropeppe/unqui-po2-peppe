@@ -19,10 +19,10 @@ class CajaTest {
 	private ProductoCooperativa galletas;
 	private ProductoCooperativa harina;
 	private Caja caja1;
-	private Cliente cliente1;
+
 	
-	
-	private List<Producto> stockMercado;
+	private List<Cobrable> cobrables;
+	private List<Producto> compra;
 	
 	@BeforeEach
 	public void setUp() {
@@ -35,31 +35,30 @@ class CajaTest {
 		
 		
 		//creacion de stock y agregado del mismo en el almacen
-		stockMercado = new ArrayList<Producto>();
-		stockMercado.add(arroz);
-		stockMercado.add(detergente);
-		stockMercado.add(galletas);
-		stockMercado.add(harina);
+		cobrables = new ArrayList<Cobrable>();
+		cobrables.add(arroz);
+		cobrables.add(detergente);
+		cobrables.add(galletas);
+		cobrables.add(harina);
 		
 		
+		//creacion de compra y agregado del mismo en el almacen
+		compra = new ArrayList<Producto>();
+		compra.add(arroz);
+		compra.add(galletas);
+		compra.add(harina);
 		
 		
-		//creacion cliente y agregar producto a compra
-		
-		cliente1 = new Cliente();
-		cliente1.agregarProductoACompra(arroz);
-		cliente1.agregarProductoACompra(galletas);
-		cliente1.agregarProductoACompra(harina);
 		
 		//creacion de caja
-		caja1 = new Caja(cliente1,stockMercado);
+		caja1 = new Caja(compra,stockMercado);
 	}
 	
 	
 
 	@Test
 	void test() {
-		assertEquals(103.41,caja1.calcularPrecioCompra(stockMercado, cliente1.getCompra()));
+		assertEquals(103.41,caja1.cobrar());
 		assertSame(detergente, caja1.getStock().get(0));
 		assertEquals(1,caja1.getStock().size());
 		caja1.sacarDelStock(arroz);

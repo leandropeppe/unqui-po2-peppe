@@ -19,17 +19,17 @@ public class ProductoTest {
 	@Test
 	public void testConstructor() {
 		assertEquals("Arroz", arroz.getNombre());
-		assertEquals(new Double(18.9), arroz.getPrecio());
+		assertEquals(new Double(18.9), arroz.getMontoAPagar());
 		assertTrue(arroz.esPrecioCuidado());
 		
 		assertEquals("Vino", vino.getNombre());
-		assertEquals(new Double(55), vino.getPrecio());
+		assertEquals(new Double(55), vino.getMontoAPagar());
 		assertFalse(vino.esPrecioCuidado());
 	}
 	
 	@Test
 	public void testAumentarPrecio() {
 		arroz.aumentarPrecio(1.5);
-		assertEquals(new Double(20.4), arroz.getPrecio());
+		assertEquals(new Double(20.4), arroz.getMontoAPagar());
 	}
 }

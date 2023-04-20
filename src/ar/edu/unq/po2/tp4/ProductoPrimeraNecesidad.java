@@ -10,7 +10,7 @@ public class ProductoPrimeraNecesidad extends Producto {
 	}
 
 	@Override
-	public double getPrecio(){
+	public double getMontoAPagar(){
 		return precio * (1 - descuento);
 	}
 	
