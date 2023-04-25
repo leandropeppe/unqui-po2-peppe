@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tp5;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,14 +31,18 @@ class Veterinaria {
 		persona2 = new Persona("Walter",fechaNacWalter);
 		mascota1 = new Mascota("Pepita","Canario");
 		mascota2 = new Mascota("Pepon","Golondrina");
-		List<Nombrable> nombrables = Arrays.asList(persona1,persona2,mascota1,mascota2);
+		
 		
 	}
 	
-	
+
 
 	@Test
 	void test() {
+		
+		List<Nombrable> nombrables = Arrays.asList(persona1,persona2,mascota1,mascota2);
+		
+		nombrables.stream().forEach(n-> System.out.print(n.getNombre()+"\n")); 
 		
 	}
 

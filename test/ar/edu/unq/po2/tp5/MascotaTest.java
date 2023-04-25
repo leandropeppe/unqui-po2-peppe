@@ -17,9 +17,13 @@ class MascotaTest {
 	}
 
 	@Test
-	void test() {
+	void nombreTest() {
 		assertEquals("Pepita",mascota1.getNombre());
 		assertEquals("Pepon",mascota2.getNombre());
+	}
+	
+	@Test
+	void razaTest() {
 		assertEquals("Canario",mascota1.getRaza());
 		assertEquals("Golondrina",mascota2.getRaza());
 	}

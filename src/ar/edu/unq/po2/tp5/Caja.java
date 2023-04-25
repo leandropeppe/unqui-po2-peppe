@@ -32,7 +32,7 @@ public class Caja implements Agencia{
 
 	@Override
 	public void registrarPago(Factura factura) {
-		System.out.print("Se pago la factura");
+		System.out.print("Se pago la factura\n");
 	}
 
 
