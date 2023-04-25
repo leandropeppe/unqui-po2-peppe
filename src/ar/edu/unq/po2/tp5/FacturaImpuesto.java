@@ -6,15 +6,15 @@ public class FacturaImpuesto extends Factura {
 
 	private double tasa;
 	
-	public FacturaImpuesto(double montoAPagar, String tipoFactura , String tipoImpuesto, double tasa) {
-		super(montoAPagar, tipoFactura);
+	public FacturaImpuesto(String tipoFactura , String tipoImpuesto, double tasa) {
+		super(tipoFactura);
 		this.tipoImpuesto = tipoImpuesto;
 		this.tasa = tasa;
 	}
 	
 	@Override 
 	public double getMontoAPagar() {
-		return this.tasa ;
+		return this.tasa  ;
 	}
 
 	public String getTipoImpuesto() {

@@ -8,11 +8,13 @@ import ar.edu.unq.po2.tp4.Producto;
 public class Caja implements Agencia{
 	
 	private List<Producto> stockMercado ;
-	private List<Producto> compra ;
+	private List<Cobrable> compra ;
 	
 	
-	public Caja(List<Producto> compra , List<Producto> stockMercado) {
+	public Caja(List<Cobrable> compra , List<Producto> stockMercado) {
 		super();
+		this.compra = compra;
+		this.stockMercado = stockMercado;
 	}
 	
 	
@@ -30,11 +32,11 @@ public class Caja implements Agencia{
 
 	@Override
 	public void registrarPago(Factura factura) {
-		
+		System.out.print("Se pago la factura");
 	}
 
 
-	public List<Producto> getCompra() {
+	public List<Cobrable> getCompra() {
 		return compra;
 	}
 

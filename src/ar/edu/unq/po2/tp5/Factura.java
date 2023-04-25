@@ -2,22 +2,19 @@ package ar.edu.unq.po2.tp5;
 
 
 
-public class Factura implements Cobrable {
+public abstract class Factura implements Cobrable {
 	
-	private double montoAPagar ; 
+	 
 	private String tipoFactura;
 	
 	
-	public Factura(double montoAPagar, String tipoFactura) {
+	public Factura(String tipoFactura) {
 		super();
-		this.montoAPagar = montoAPagar;
 		this.tipoFactura = tipoFactura;
 	}
 
 
-	public double getMontoAPagar() {
-		return montoAPagar;
-	}
+	public abstract double getMontoAPagar();
 
 
 	public String getTipo() {

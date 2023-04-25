@@ -6,8 +6,8 @@ public class FacturaServicio extends Factura {
 	private double cantUnidadConsumida;
 	private int periodo;
 
-	public FacturaServicio(double montoAPagar, String tipoFactura, double costoXUnidad , double cantUnidadConsumida , int periodo) {
-		super(montoAPagar, tipoFactura);
+	public FacturaServicio(String tipoFactura, double costoXUnidad , double cantUnidadConsumida , int periodo) {
+		super(tipoFactura);
 		this.costoXUnidad = costoXUnidad ;
 		this.cantUnidadConsumida = cantUnidadConsumida;
 		this.periodo = periodo ;
