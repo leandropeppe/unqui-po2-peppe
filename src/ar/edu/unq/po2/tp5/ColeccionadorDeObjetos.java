@@ -4,10 +4,6 @@ import java.util.*;
 
 public class ColeccionadorDeObjetos {
 	
-	//List<Collection> collection = new ArrayList<Collection>();
-	List<Collection> collection = new ArrayList<Collection>();
-	
-	
 	
 	public Object getFirstFrom(List collection) {
 		System.out.print(collection.get(0));

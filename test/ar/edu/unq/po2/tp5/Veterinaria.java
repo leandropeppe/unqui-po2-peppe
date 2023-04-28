@@ -10,7 +10,7 @@ import java.util.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class Veterinaria {
+class VeterinariaTest {
 	
 	Persona persona1;
 	Persona persona2;
