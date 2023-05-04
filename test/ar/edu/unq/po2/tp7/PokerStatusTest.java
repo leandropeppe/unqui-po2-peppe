@@ -1,8 +1,7 @@
 
 package ar.edu.unq.po2.tp7;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,6 +28,11 @@ class PokerStatusTest {
   public String diezDePica;
   public String diezDeTrebol;
   public String diezDeDiamantes;
+  
+  public String qDeCorazones;
+  public String qDeDiamantes;
+  public String qDeTreboles;
+  
   
   public PokerStatus pk;
   
@@ -57,17 +61,47 @@ class PokerStatusTest {
     diezDeTrebol="10T";
     diezDeDiamantes="10D";
     
+    qDeCorazones = "QC" ;
+    qDeDiamantes = "QD" ;
+    qDeTreboles = "QT";
+    
     
   } // *1 hasta aca es el Setup del test JUnit
 
+  
+  
+  
   // Comienza el Verify
   @Test
   void testVerificarSiHayPoker() {
-    assertTrue(pk.verificar(asDeCorazones,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones));// hay poker
-    assertFalse(pk.verificar(dosDeTreboles,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones));// no hay poker
+    assertEquals("Poquer",pk.verificar(asDeCorazones,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones));// hay Poquer
+    assertEquals("Trio",pk.verificar(dosDeTreboles,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones));// hay Trio
+    assertEquals("Color",pk.verificar(asDeCorazones,qDeCorazones,diezDeCorazones,kDeCorazones,dosDeCorazones));// hay color
+    assertEquals("Nada",pk.verificar(dosDeTreboles,asDePica,diezDeCorazones,asDeDiamantes,dosDeCorazones));// no hay nada
+  }
+  
+ 
+  @Test
+  void testVerificarPoker() {
+    assertEquals("Poquer",pk.verificar(asDeCorazones,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones));// hay Poquer
+    assertEquals("Nada",pk.verificar(dosDeTreboles,asDePica,diezDeCorazones,asDeDiamantes,dosDeCorazones));// no hay Poquer
+    
+  }
+  @Test
+  void testVerificarColor() {
+    assertEquals("Color",pk.verificar(asDeCorazones,dosDeCorazones,kDeCorazones,diezDeCorazones,qDeCorazones));// hay color
+    assertEquals("Nada",pk.verificar(dosDeTreboles,asDePica,diezDeCorazones,asDeDiamantes,dosDeCorazones));// no hay color
+    
+  }
+  
+  @Test
+  void testVerificarTrio() {
+    assertEquals("Trio",pk.verificar(qDeCorazones,qDeDiamantes,kDeCorazones,diezDeCorazones,qDeTreboles));// hay trio
+    assertEquals("Nada",pk.verificar(dosDeTreboles,asDePica,asDeTreboles,diezDeCorazones,dosDeCorazones));// no hay trio
     
   }
 
+  
   
 //Termina el Verify
 // El Teardown esta implicito, se ejecuta una vez terminado el verify
