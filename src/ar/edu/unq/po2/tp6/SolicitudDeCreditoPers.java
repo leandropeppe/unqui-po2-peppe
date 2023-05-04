@@ -1,8 +1,8 @@
 package ar.edu.unq.po2.tp6;
 
 public class SolicitudDeCreditoPers extends SolicitudDeCredito {
-	private double montoRequerido;
-	private double porcentajeRequerido;
+	private double montoRequerido = 15000;
+	private double porcentajeRequerido = 0.7 ;
 	
 	public SolicitudDeCreditoPers(Cliente solicitante, double monto, double plazo) {
 		super(solicitante, monto, plazo);

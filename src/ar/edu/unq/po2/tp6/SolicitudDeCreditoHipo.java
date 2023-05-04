@@ -1,31 +1,26 @@
 package ar.edu.unq.po2.tp6;
 
 public class SolicitudDeCreditoHipo extends SolicitudDeCredito{
-	private PropiedadInmobiliaria jauz;
+	private PropiedadInmobiliaria inmu;
+	private double porcValorFiscalRequerido = ;
 
-	public SolicitudDeCreditoHipo(Cliente solicitante, double monto, double plazo, PropiedadInmobiliaria jauz) {
-		super(solicitante, monto, plazo);
-		this.jauz = jauz;
+	
+	public SolicitudDeCreditoHipo(Cliente solicitante, double monto, double plazo,
+			PropiedadInmobiliaria inmu, double porcValorFiscalRequerido) {
+		super(solicitante, monto, plazo, porcentajeRequerido);
+		this.inmu = inmu;
+		this.porcValorFiscalRequerido = porcValorFiscalRequerido;
 	}
 
 	public boolean esAceptable() {
-		// monto de la cuota no supere 50% los ingresos mensuales 
-		// monto total solicitado no sea mayor a 70% del valor fiscal de la garantia 
-		// la persona no supere los 65 años antes de terminar depagar el credito
-		return this.cuotaNoSuperaPorcentajeRequerido() & 
-			   this.montoTotalSolicitadoMenorAPorcetajeRequerido() & 
-			   this.edadSolicitanteAlFinalizarCredito() <= 65; 
+		return this.noSuperaEdadRequeridaAntesDePagar() & this.montoTotalNoSuperaValorFiscalRequerido() & this.cuotaNoSuperaPorcentajeRequerido();
 	}
 	
-	public double edadSolicitanteAlFinalizarCredito() {
-		return this.getSolicitante().getEdad() + (this.getPlazo() / 12) ;
+	public boolean noSuperaEdadRequeridaAntesDePagar() {
+		return (plazo / 12) + solicitante.getEdad() <= 65;
 	}
 	
-	public boolean cuotaNoSuperaPorcentajeRequerido() {
-		return this.valorDeCuota() <=  this.getSolicitante().getSueldoNetoMensual() * 0.5;
-	}
-	
-	public boolean montoTotalSolicitadoMenorAPorcetajeRequerido() {
-		return this.getMonto() <= this.jauz.getValorFiscal() * 0.7 ;
+	public boolean montoTotalNoSuperaValorFiscalRequerido() {
+		return monto < (inmu.getValorFiscal() * porcValorFiscalRequerido);
 	}
 }

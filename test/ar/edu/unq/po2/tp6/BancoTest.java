@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tp6;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
 
 import java.util.*;
 
@@ -25,7 +26,10 @@ class BancoTest {
 	// Crear solicitudes
 	private SolicitudDeCreditoHipo hipo1 ;
 	private SolicitudDeCreditoPers pers1 ;
-		
+	
+	
+	// mock
+	private Cliente cliente5;
 	
 	@BeforeEach
 	void setUp() {
@@ -34,6 +38,8 @@ class BancoTest {
 		cliente2 = new Cliente("Persona", "joven", "Av. siempre viva 123", 20, 14000);
 		cliente3 = new Cliente("Leandro", "Peppe", "San martin 121", 28, 50000);
 		cliente4 = new Cliente("Persona", "Cuatro", "en frente", 40, 30000);
+		
+		cliente5 = mock(Cliente.class);
 		
 		clientes = new ArrayList<Cliente>();
 		
@@ -72,6 +78,7 @@ class BancoTest {
 	void añadirCliente() {
 		bbva.añadirCliente(cliente4);
 		assertEquals(4,bbva.getClientes().size());
+		
 	}
 
 }

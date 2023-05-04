@@ -9,7 +9,7 @@ public class Banco {
 	
 	public Banco(List<Cliente> clientes) {
 		super();
-		this.clientes = clientes;//new ArrayList<Cliente>();
+		this.clientes = clientes; //new ArrayList<Cliente>();
 		this.solicitudes = new ArrayList<SolicitudDeCredito>();
 	}
 	
@@ -33,6 +33,10 @@ public class Banco {
 
 	public void añadirCliente(Cliente cl) {
 		clientes.add(cl);
+	}
+	
+	public void añadirClientes(List<Cliente> cl) {
+		
 	}
 
 	public List<SolicitudDeCredito> getSolicitudes() {

@@ -33,12 +33,12 @@ class ColeccionadorDeObjetosTest {
 		
 		List<Collection> collection = Arrays.asList(autos,personas);
 		
-		coleccionador.
+		
 	}
 
 	@Test
 	void getFirstFromTest() {
-		assertEquals("Corvette",.)
+		
 	}
 
 }
