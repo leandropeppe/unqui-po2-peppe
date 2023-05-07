@@ -28,6 +28,7 @@ public class PokerStatus {
 	
 	public String verificar(List<Carta> mano) {
 		
+		
 		List<String> jugadas = new ArrayList<String>();
 		
 		ChequeadorPoker checkP = new ChequeadorPoker(mano) ;
@@ -40,7 +41,7 @@ public class PokerStatus {
 		jugadas.add(checkT.nombreJugada());
 		//["Poker","Nada","Trio"]
 		int n = 0;
-		while(jugadas.get(n) != "No tengo jugadas" & n != jugadas.size()-1) {
+		while(jugadas.get(n) == "Nada" & n != jugadas.size()-1) {
 			n += 1 ;
 		}
 		

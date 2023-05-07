@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp7bis;
 
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +16,7 @@ class ColorLesionesTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		assertSame(ColorLesiones.Gris,ColorLesiones.Rojo.getSiguiente());
 	}
 
 }

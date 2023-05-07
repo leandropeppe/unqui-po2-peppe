@@ -13,7 +13,7 @@ public class ChequeadorColor implements IChequadorDeJugada{
 		this.manoAChequear = manoAChequear;
 	}
 	
-	public boolean chequear() {
+	public boolean chequear() { // Verifica si la mano es Color
 		
 		List<String> palos = manoAChequear.stream().map(c->c.getPalo()).toList();
 		

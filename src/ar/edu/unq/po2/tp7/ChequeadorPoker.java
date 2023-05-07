@@ -14,7 +14,7 @@ public class ChequeadorPoker implements IChequadorDeJugada {
 	}
 
 	
-	public boolean chequear() {
+	public boolean chequear() {  // Verifica si la mano es poker
 		
 		List<Integer> valores = manoAChequear.stream().map(c->c.getValor()).toList();
 		
@@ -27,7 +27,7 @@ public class ChequeadorPoker implements IChequadorDeJugada {
 	}
 	
 	@Override
-	public String nombreJugada() {
+	public String nombreJugada() { // Devuelve "Poker" si lo es "Nada" sino
 		if(this.chequear()) {
 			return "Poquer";
 		}else {
@@ -37,10 +37,7 @@ public class ChequeadorPoker implements IChequadorDeJugada {
 	}
 
 	
-	
 
-
-	
 	
 	/*
 	public valorPoker(List<Carta> cartas) {

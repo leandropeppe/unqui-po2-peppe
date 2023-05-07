@@ -12,7 +12,7 @@ public class ChequeadorTrio implements IChequadorDeJugada{
 		this.manoAChequear = manoAChequear;
 	}
 
-	public boolean chequear() {
+	public boolean chequear() { // Verifica si la mano es Trio
 		
 		List<Integer> valores = manoAChequear.stream().map(c->c.getValor()).toList();
 		

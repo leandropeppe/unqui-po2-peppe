@@ -8,10 +8,12 @@ import java.util.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.mockito.Mockito.*;
+
 class PokerStatusTest {
 	  
 	  
-	public Carta asDeCorazones;
+	  public Carta asDeCorazones;
 	  public Carta asDePica;
 	  public Carta asDeTreboles;
 	  public Carta asDeDiamantes;
@@ -37,6 +39,15 @@ class PokerStatusTest {
 	  public Carta qDeTreboles;
 	  
 	  
+	  //Cartas mock
+	  public Carta cincoDeTreboles;
+	  public Carta cincoDeCorazones;
+	  public Carta cincoDeDiamantes;
+	  public Carta cincoDePica;
+	  public Carta sieteDePica;
+	  
+	  
+	  
 	  public PokerStatus pk1;
 	  public PokerStatus pk2;
 	  public PokerStatus pk3;
@@ -45,7 +56,10 @@ class PokerStatusTest {
 	  public List<Carta> manoPoquer ;
 	  public List<Carta> manoTrio ;
 	  public List<Carta> manoColor ;
-	  public List<Carta> manoNada ;
+	  public List<Carta> manoNada1 ;
+	  public List<Carta> manoNada2 ;
+	  
+	  public List<Carta> manoMock ;
 	  
 	  
 	  @BeforeEach
@@ -75,16 +89,28 @@ class PokerStatusTest {
 	    qDeDiamantes = new Carta(12,"Diamantes");
 	    qDeTreboles  = new Carta(12,"Treboles");
 	    
+	    // cartas mock
+	    
+	    
+	    cincoDeTreboles = mock(Carta.class);
+		cincoDeCorazones = mock(Carta.class);
+		cincoDeDiamantes = mock(Carta.class);
+		cincoDePica = mock(Carta.class);
+		sieteDePica = mock(Carta.class);
+		
+		
+	    
 	    manoPoquer = Arrays.asList(asDeCorazones,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones);
 	    manoTrio = Arrays.asList(dosDeTreboles,asDePica,asDeTreboles,asDeDiamantes,dosDeCorazones);
 	    manoColor = Arrays.asList(asDeCorazones,qDeCorazones,diezDeCorazones,kDeCorazones,dosDeCorazones);
-	    manoNada = Arrays.asList(dosDeTreboles,asDePica,diezDeCorazones,asDeDiamantes,dosDeCorazones);
-	    
+	    manoNada1 = Arrays.asList(kDeDiamantes,qDeTreboles,diezDeTreboles,diezDePica,dosDeCorazones);
+	    manoNada2 = Arrays.asList(dosDeTreboles,asDePica,diezDeCorazones,asDeDiamantes,dosDeCorazones);
+	    manoMock = Arrays.asList(cincoDeTreboles,cincoDeCorazones,cincoDeDiamantes,cincoDePica,sieteDePica);
 	    
 	    pk1 = new PokerStatus(manoPoquer,manoTrio);
-	    pk2 = new PokerStatus(manoTrio,manoNada);
-	    pk3 = new PokerStatus(manoColor,manoNada);
-	    pk4 = new PokerStatus(manoNada,manoNada);
+	    pk2 = new PokerStatus(manoTrio,manoNada1);
+	    pk3 = new PokerStatus(manoColor,manoNada1);
+	    pk4 = new PokerStatus(manoNada1,manoNada2);
 		  
 	    
 	  } // *1 hasta aca es el Setup del test JUnit
@@ -96,7 +122,7 @@ class PokerStatusTest {
 	  @Test
 	  void testVerificarSiHayPoker() {
 	    assertEquals("Poquer",pk1.verificar(pk1.getMano1()));// hay Poquer
-	    assertEquals("Trio",pk2.verificar(pk2.getMano2()));// hay Trio
+	    assertEquals("Trio",pk2.verificar(pk2.getMano1()));// hay Trio
 	    assertEquals("Color",pk3.verificar(pk3.getMano1()));// hay color
 	    assertEquals("Nada",pk4.verificar(pk4.getMano1()));// no hay nada
 	  }
@@ -104,7 +130,7 @@ class PokerStatusTest {
 	 
 	  @Test
 	  void testVerificarPoker() {
-	    //assertEquals("Poquer",pk1.verificar(pk1.getMano1()));// hay Poquer
+	    assertEquals("Poquer",pk1.verificar(pk1.getMano1()));// hay Poquer
 	    assertEquals("Nada",pk4.verificar(pk4.getMano2()));// no hay Poquer
 	    
 	  }
@@ -123,9 +149,11 @@ class PokerStatusTest {
 	    
 	  }
 	  
+	  @Test
 	  void testGanadorDeMano() {
 		  assertEquals("Mano1",pk1.ganadorDeMano(pk1.getMano1(),pk1.getMano2()));
-		  assertEquals("Mano1",pk2.ganadorDeMano(pk1.getMano1(),pk1.getMano2()));
+		  assertEquals("Mano1",pk2.ganadorDeMano(pk2.getMano1(),pk2.getMano2()));
+		  assertEquals("Mano2",pk4.ganadorDeMano(pk4.getMano1(),pk4.getMano2()));
 	  }
 
 	  
