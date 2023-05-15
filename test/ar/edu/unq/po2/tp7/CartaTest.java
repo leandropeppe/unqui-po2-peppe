@@ -72,6 +72,6 @@ class CartaTest {
 		assertFalse(qDeTreboles.esMismoPalo(diezDePica));
 		assertTrue(dosDePica.esMismoPalo(kDePica));
 		assertFalse(dosDeTreboles.esMismoPalo(dosDeDiamantes));
-		
+		assertEquals("12 Treboles",qDeTreboles.toString());
 	}
 }

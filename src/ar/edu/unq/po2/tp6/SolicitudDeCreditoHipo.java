@@ -2,12 +2,12 @@ package ar.edu.unq.po2.tp6;
 
 public class SolicitudDeCreditoHipo extends SolicitudDeCredito{
 	private PropiedadInmobiliaria inmu;
-	private double porcValorFiscalRequerido = ;
+	private double porcValorFiscalRequerido  ;
 
 	
 	public SolicitudDeCreditoHipo(Cliente solicitante, double monto, double plazo,
 			PropiedadInmobiliaria inmu, double porcValorFiscalRequerido) {
-		super(solicitante, monto, plazo, porcentajeRequerido);
+		super(solicitante, monto, plazo);
 		this.inmu = inmu;
 		this.porcValorFiscalRequerido = porcValorFiscalRequerido;
 	}
@@ -16,11 +16,16 @@ public class SolicitudDeCreditoHipo extends SolicitudDeCredito{
 		return this.noSuperaEdadRequeridaAntesDePagar() & this.montoTotalNoSuperaValorFiscalRequerido() & this.cuotaNoSuperaPorcentajeRequerido();
 	}
 	
+	private boolean cuotaNoSuperaPorcentajeRequerido() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	public boolean noSuperaEdadRequeridaAntesDePagar() {
-		return (plazo / 12) + solicitante.getEdad() <= 65;
+		return (this.getPlazo() / 12) + this.getSolicitante().getEdad() <= 65;
 	}
 	
 	public boolean montoTotalNoSuperaValorFiscalRequerido() {
-		return monto < (inmu.getValorFiscal() * porcValorFiscalRequerido);
+		return this.getMonto() < (inmu.getValorFiscal() * porcValorFiscalRequerido);
 	}
 }

@@ -25,7 +25,13 @@ public enum ColorLesiones {
 	public int getNivelDeRiesgo() {
 		return nivelDeRiesgo;
 	}
-
+	
+	public ColorLesiones getSiguiente() {
+		int indiceSiguiente = (this.ordinal() + 1) % ColorLesiones.values().length;
+		return ColorLesiones.values()[indiceSiguiente];
+	}
+	
+	/*
 	public ColorLesiones getSiguiente() {
 		ColorLesiones[] valores = ColorLesiones.values();
 		if(this.ordinal()<3) {
@@ -34,13 +40,12 @@ public enum ColorLesiones {
 			return Rojo;
 		}
 	}
-	/*
+	
 	public ColorLesiones getSiguiente2() {
-	    Skill mySkill = Skill.INTERMEDIATE;
+	    ColorLesiones color = this.;
 	    switch(mySkill) {
 	      case BEGINNER:
-	        System.out.println("Beginner");
-	        break;
+	        return 0 ;
 	      case INTERMEDIATE:
 	         System.out.println("Intermediate");
 	        break;
@@ -51,5 +56,6 @@ public enum ColorLesiones {
 	        System.out.println("Expert");
 	    }
 	  }
-	}*/
+	}
+	 */
 }

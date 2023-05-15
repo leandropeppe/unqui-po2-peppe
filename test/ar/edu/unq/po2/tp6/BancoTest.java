@@ -50,7 +50,7 @@ class BancoTest {
 		bbva = new Banco(clientes);
 		
 		jauz = new PropiedadInmobiliaria("mi casa", "Av. siempre viva 123", 30000);
-		hipo1 = new SolicitudDeCreditoHipo(cliente1, 20000, 30, jauz);
+		//hipo1 = new SolicitudDeCreditoHipo(cliente1, 20000, 30, jauz);
 		pers1 = new SolicitudDeCreditoPers(cliente2, 20000 , 10);
 		
 		//Agregar solicitudes al banco

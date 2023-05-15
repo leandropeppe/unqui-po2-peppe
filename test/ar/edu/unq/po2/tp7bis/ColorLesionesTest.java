@@ -1,7 +1,6 @@
 package ar.edu.unq.po2.tp7bis;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,8 +14,17 @@ class ColorLesionesTest {
 	}
 
 	@Test
-	void test() {
-		assertSame(ColorLesiones.Gris,ColorLesiones.Rojo.getSiguiente());
+	void testSiguiente() {
+		assertEquals(0,ColorLesiones.Gris.compareTo(ColorLesiones.Rojo.getSiguiente()));
+		assertEquals(0,ColorLesiones.Amarillo.compareTo(ColorLesiones.Gris.getSiguiente()));
+		assertEquals(0,ColorLesiones.Miel.compareTo(ColorLesiones.Amarillo.getSiguiente()));
+		assertEquals(0,ColorLesiones.Rojo.compareTo(ColorLesiones.Miel.getSiguiente()));
 	}
+	
+	@Test 
+	void testOrdinal() {
+		assertEquals(1,ColorLesiones.Gris.ordinal());
+	}
+	
 
 }

@@ -16,7 +16,10 @@ public class Carta {
 	public int getValor() {
 		return valor;
 	}
-
+	
+	public String toString() {
+		return this.valor + " " + this.palo;
+	}
 
 	public String getPalo() {
 		return palo;
