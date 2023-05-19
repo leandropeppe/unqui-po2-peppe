@@ -1,10 +1,9 @@
 package ar.edu.unq.po2.tp7bis;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertTrue;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,9 +36,9 @@ class MunicipioTest {
 
 	@Test
 	void soloFutbolTest() {
-		equals(futbol5.equals(quilmes.soloFutbol().get(0)));
-		equals(futbol11.equals(quilmes.soloFutbol().get(1)));
-		equals(papiFutbol.equals(quilmes.soloFutbol().get(2)));
+		assertEquals(futbol5,quilmes.soloFutbol().get(0));
+		assertEquals(futbol11,quilmes.soloFutbol().get(1));
+		assertEquals(papiFutbol,quilmes.soloFutbol().get(2));
 		assertTrue(quilmes.soloFutbol().size()==3);
 	}
 	
@@ -52,9 +51,9 @@ class MunicipioTest {
 	
 	@Test
 	void actividadesDeXComplejidadTest() {
-		equals(jabalina.equals(quilmes.actividadesDeXComplejidad(4).get(0)));
+		assertEquals(jabalina, quilmes.actividadesDeXComplejidad(4).get(0));
 		
-		equals(tenis.equals(quilmes.actividadesDeXComplejidad(3).get(0)));
+		assertEquals(tenis, quilmes.actividadesDeXComplejidad(3).get(0));
 		
 		assertTrue(quilmes.actividadesDeXComplejidad(1).isEmpty());
 	}
@@ -62,9 +61,9 @@ class MunicipioTest {
 	
 	@Test
 	void actividadDeMenorCostoTest() {
-		equals(futbol5.equals(quilmes.actividadDeMenorCosto(Deporte.Futbol)));
-		equals(tenis.equals(quilmes.actividadDeMenorCosto(Deporte.Tenis)));
-		equals(jabalina.equals(quilmes.actividadDeMenorCosto(Deporte.Jabalina)));
+		assertEquals(futbol5,quilmes.actividadDeMenorCosto(Deporte.Futbol));
+		assertEquals(tenis , quilmes.actividadDeMenorCosto(Deporte.Tenis));
+		assertEquals(jabalina , quilmes.actividadDeMenorCosto(Deporte.Jabalina));
 		
 		assertTrue(quilmes.actividadDeMenorCosto(Deporte.Running).isEmpty());
 	}

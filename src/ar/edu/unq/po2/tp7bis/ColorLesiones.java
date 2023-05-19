@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp7bis;
 
+
 import java.util.*;
 
 public enum ColorLesiones {
