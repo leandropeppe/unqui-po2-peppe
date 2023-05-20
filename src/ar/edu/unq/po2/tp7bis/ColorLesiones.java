@@ -16,7 +16,7 @@ public enum ColorLesiones {
 	ColorLesiones(String descripcion, int nivelDeRiego ){
 		this.descripcion = descripcion;
 		this.nivelDeRiesgo = nivelDeRiego ;
-		//this.siguiente = siguiente;
+		
 	}
 
 	public String getDescripcion() {
@@ -32,31 +32,5 @@ public enum ColorLesiones {
 		return ColorLesiones.values()[indiceSiguiente];
 	}
 	
-	/*
-	public ColorLesiones getSiguiente() {
-		ColorLesiones[] valores = ColorLesiones.values();
-		if(this.ordinal()<3) {
-			return valores[(this.ordinal()+1)];
-		}else {
-			return Rojo;
-		}
-	}
 	
-	public ColorLesiones getSiguiente2() {
-	    ColorLesiones color = this.;
-	    switch(mySkill) {
-	      case BEGINNER:
-	        return 0 ;
-	      case INTERMEDIATE:
-	         System.out.println("Intermediate");
-	        break;
-	      case PROFICIENT:
-	        System.out.println("Proficient");
-	        break;
-	      case EXPERT:
-	        System.out.println("Expert");
-	    }
-	  }
-	}
-	 */
 }

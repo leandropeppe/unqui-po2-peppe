@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tp8;
+package ar.edu.unq.po2.tp8.Parcelas;
 
 public class ParcelaPura implements Parcela {
 
@@ -13,11 +13,13 @@ public class ParcelaPura implements Parcela {
 	
 	@Override
 	public double recaudacionAnual() {
+		return this.valor() / 4;
+		/*
 		if(cultivo == "Trigo") {
-			return 300 / ( Math.pow(2, nivel) );
+			return 300 / ( Math.pow(2, nivel) * 2 );
 		}else {
-			return 500 / (Math.pow(2, nivel) );
-		}
+			return 500 /  (Math.pow(2, nivel) * 2 );
+		}*/
 	}
 
 
@@ -31,6 +33,13 @@ public class ParcelaPura implements Parcela {
 	@Override
 	public void setNivel(int nivel) {
 		this.nivel = nivel ;
+	}
+
+
+	@Override
+	public double valor() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

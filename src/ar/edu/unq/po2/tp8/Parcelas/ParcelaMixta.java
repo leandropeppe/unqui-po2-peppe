@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tp8;
+package ar.edu.unq.po2.tp8.Parcelas;
 
 import java.util.*;
 
@@ -20,8 +20,6 @@ public class ParcelaMixta implements Parcela {
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
-
-
 
 
 	public void agregarParcelas(Parcela parcela1, Parcela parcela2, Parcela parcela3, Parcela parcela4) {
@@ -46,6 +44,12 @@ public class ParcelaMixta implements Parcela {
 			recaudacion += hijo.recaudacionAnual();
 		}
 		return recaudacion ;
+	}
+
+	@Override
+	public double valor() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

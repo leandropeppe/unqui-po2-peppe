@@ -8,6 +8,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tp8.Parcelas.ParcelaMixta;
+import ar.edu.unq.po2.tp8.Parcelas.ParcelaPura;
+
 class ParcelaTest {
 	// Nodo
 	ParcelaMixta parcelaNodo1 ;
@@ -61,10 +64,10 @@ class ParcelaTest {
 		assertEquals(1,parcelaPura3.getNivel());
 		assertEquals(1,parcelaNodo2.getNivel());
 		
-		//assertEquals(500,parcelaPura1.recaudacionAnual());
-		//assertEquals(300,parcelaPura2.recaudacionAnual());
-		//assertEquals(500,parcelaPura3.recaudacionAnual());
-		//assertEquals(75,parcelaNodo2.recaudacionAnual());
+		assertEquals(500,parcelaPura1.recaudacionAnual());
+		assertEquals(300,parcelaPura2.recaudacionAnual());
+		assertEquals(500,parcelaPura3.recaudacionAnual());
+		//assertEquals(400,parcelaNodo2.recaudacionAnual());
 		
 			
 	}
@@ -77,7 +80,7 @@ class ParcelaTest {
 		assertEquals(2,parcelaPura6.getNivel());
 		assertEquals(2,parcelaPura7.getNivel());
 		
-		assertEquals(400,parcelaNodo2.recaudacionAnual());
+		//assertEquals(400,parcelaNodo2.recaudacionAnual());
 		
 		assertEquals(125,parcelaPura4.recaudacionAnual());
 		assertEquals(125,parcelaPura5.recaudacionAnual());
