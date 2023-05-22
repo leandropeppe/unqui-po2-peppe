@@ -12,7 +12,7 @@ public class Ingeniero extends CaracterPersonaje {
 	}
 
 	@Override
-	public void caminar() {
+	public void caminar(Casillero casilleroPartida,Casillero casilleroLlegada) {
 		while(/*No llegue a destino*/) {
 			this.construirCamino();
 			this.avanzar();
@@ -20,14 +20,15 @@ public class Ingeniero extends CaracterPersonaje {
 	}
 	
 	
-	private void avanzar() {
-		// TODO Auto-generated method stub
+	public void avanzar() {
+		// caminar en diagonal
 		
 	}
 
 	public void construirCamino() {
-		if(Camino.tieneLaja() && this.cantidadDeLajas != 0) {
+		if( !Casillero.tieneLaja() && this.cantidadDeLajas != 0) {
 			this.ponerLaja();
+			Casillero.ponerLaja();
 		}
 	}
 

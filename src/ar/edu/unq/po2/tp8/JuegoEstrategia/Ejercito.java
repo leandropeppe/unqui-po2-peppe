@@ -7,9 +7,8 @@ public class Ejercito extends CaracterPersonaje {
 	private List<CaracterPersonaje> personajes = new ArrayList<>();
 	
 	@Override
-	public void caminar() {
-		// TODO Auto-generated method stub
-		
+	public void caminar(Casillero casilleroPartida,Casillero casilleroLlegada) {
+		personajes.stream().forEach(p->p.caminar(casilleroPartida, casilleroLlegada));
 	}
 	
 	public void añadir(CaracterPersonaje personaje) {
@@ -20,4 +19,11 @@ public class Ejercito extends CaracterPersonaje {
 		personajes.remove(personaje);
 	}
 
+	
+	@Override
+	public void avanzar() {
+		// TODO Auto-generated method stub
+	}
+
+	
 }
