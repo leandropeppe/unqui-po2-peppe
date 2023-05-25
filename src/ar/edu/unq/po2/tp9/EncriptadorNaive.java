@@ -16,5 +16,7 @@ public class EncriptadorNaive {
 		return estrategiaEncriptacion.doDesencriptar(texto);
 	}
 	
-	
+	public void modificadorEstrategia(IEncriptador nuevaEstrategia) {
+		this.estrategiaEncriptacion = nuevaEstrategia ;
+	}
 }

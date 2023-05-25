@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tp9;
 
 public class ModificarVocal implements IEncriptador {
 	
+	@Override
 	public String doEncriptar( String texto) {
 		//Transforma la palabra en una cadena de char
 		//Agarra cada letra y si es vocal devuelve la siguiente , sino devuelve la misma.
@@ -19,6 +20,8 @@ public class ModificarVocal implements IEncriptador {
 		return palabraEncriptada;
 		
 	}
+	
+	@Override
 	public String doDesencriptar( String texto) {
 		char[] palabra = texto.toCharArray();
 		
