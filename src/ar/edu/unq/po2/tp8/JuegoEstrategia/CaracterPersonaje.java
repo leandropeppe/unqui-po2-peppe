@@ -5,7 +5,7 @@ abstract class CaracterPersonaje {
 	
 	public abstract void avanzar();
 
-	public abstract void caminar(Casillero casilleroPartida, Casillero casilleroLlegada) ;
+	public abstract void caminar(Casillero casilleroLlegada) ;
 	
 	
 }

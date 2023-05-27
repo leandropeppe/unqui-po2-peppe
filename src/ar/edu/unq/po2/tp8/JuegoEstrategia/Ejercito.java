@@ -6,9 +6,10 @@ public class Ejercito extends CaracterPersonaje {
 	
 	private List<CaracterPersonaje> personajes = new ArrayList<>();
 	
+	
 	@Override
-	public void caminar(Casillero casilleroPartida,Casillero casilleroLlegada) {
-		personajes.stream().forEach(p->p.caminar(casilleroPartida, casilleroLlegada));
+	public void caminar(Casillero casilleroLlegada) {
+		personajes.stream().forEach(p->p.caminar(casilleroLlegada));
 	}
 	
 	public void añadir(CaracterPersonaje personaje) {

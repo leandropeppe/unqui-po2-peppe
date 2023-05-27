@@ -2,18 +2,19 @@ package ar.edu.unq.po2.tp8.JuegoEstrategia;
 
 
 
-public class Ingeniero extends CaracterPersonaje {
+public abstract class Ingeniero extends CaracterPersonaje {
 	
 	private int cantidadDeLajas ;
+	private Casillero posicionActual ;
 
-	public Ingeniero(int cantidad) {
+	public Ingeniero(int cantidad,Casillero posicion) {
 		super();
 		this.cantidadDeLajas = cantidad;
+		this.posicionActual = posicion;
 	}
 
-	@Override
-	public void caminar(Casillero casilleroPartida,Casillero casilleroLlegada) {
-		while(/*No llegue a destino*/) {
+	public void caminar(Casillero casilleroLlegada) {
+		while(this.posicionActual != casilleroLlegada ) {
 			this.construirCamino();
 			this.avanzar();
 		}
@@ -26,9 +27,9 @@ public class Ingeniero extends CaracterPersonaje {
 	}
 
 	public void construirCamino() {
-		if( !Casillero.tieneLaja() && this.cantidadDeLajas != 0) {
+		if( !this.posicionActual.tieneLaja() && this.cantidadDeLajas != 0) {
 			this.ponerLaja();
-			Casillero.ponerLaja();
+			this.posicionActual.ponerLaja();
 		}
 	}
 
